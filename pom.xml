@@ -1,0 +1,77 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+<properties>
+<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+<maven.compiler.encoding>UTF-8</maven.compiler.encoding>
+<java.version>17.0</java.version>
+<maven.compiler.source>7</maven.compiler.source>
+<maven.compiler.target>7</maven.compiler.target>
+ </properties>	
+
+ <modelVersion>4.0.0</modelVersion>
+  <groupId>SeleniumCucumber1.0</groupId>
+  <artifactId>SeleniumCucumber1.0</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <name>SeleniumCucumber1.0</name>
+  
+	<dependencies>
+<!-- https://mvnrepository.com/artifact/io.github.bonigarcia/webdrivermanager -->
+<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.13.2</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>io.cucumber</groupId>
+			<artifactId>cucumber-junit</artifactId>
+			<version>7.6.0</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>io.cucumber</groupId>
+			<artifactId>cucumber-java</artifactId>
+			<version>7.6.0</version>
+		</dependency>
+		<dependency>
+			<groupId>io.cucumber</groupId>
+			<artifactId>cucumber-picocontainer</artifactId>
+			<version>7.6.0</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.seleniumhq.selenium</groupId>
+			<artifactId>selenium-java</artifactId>
+			<version>4.4.0</version>
+		</dependency>
+
+	</dependencies>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>2.18.1</version>
+				<configuration>
+					<testFailureIgnore> false </testFailureIgnore>
+					<suiteXmlFiles>
+						<suiteXmlFile>src/test/resources/runner/testng.xml</suiteXmlFile>
+					</suiteXmlFiles>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-enforce-plugin</artifactId>
+				<version>1.4</version>
+			</plugin>
+
+		</plugins>
+		<testResources>
+			<testResource>
+				<directory>src/test/resources/properties</directory>
+				<includes>
+					<include>log4j.properties</include>
+				</includes>
+			</testResource>
+		</testResources>
+	</build>
+</project>
