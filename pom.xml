@@ -1,21 +1,37 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
-<properties>
-<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-<maven.compiler.encoding>UTF-8</maven.compiler.encoding>
-<java.version>17.0</java.version>
-<maven.compiler.source>7</maven.compiler.source>
-<maven.compiler.target>7</maven.compiler.target>
- </properties>	
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>SeleniumCucumber1.0</groupId>
+	<artifactId>SeleniumCucumber1.0</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>SeleniumCucumber1.0</name>
 
- <modelVersion>4.0.0</modelVersion>
-  <groupId>SeleniumCucumber1.0</groupId>
-  <artifactId>SeleniumCucumber1.0</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
-  <name>SeleniumCucumber1.0</name>
-  
+	<!-- https://mvnrepository.com/artifact/info.cukes/cucumber-java -->
 	<dependencies>
-<!-- https://mvnrepository.com/artifact/io.github.bonigarcia/webdrivermanager -->
-<dependency>
+
+		<dependency>
+
+			<groupId>info.cukes</groupId>
+
+			<artifactId>cucumber-java</artifactId>
+
+			<version>1.2.5</version>
+
+		</dependency>
+
+
+		<!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
+
+		<dependency>
+
+			<groupId>org.seleniumhq.selenium</groupId>
+
+			<artifactId>selenium-java</artifactId>
+
+			<version>3.12.0</version>
+
+		</dependency>
+
+	<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
 			<version>4.13.2</version>
@@ -43,10 +59,36 @@
 			<artifactId>selenium-java</artifactId>
 			<version>4.4.0</version>
 		</dependency>
+		<!-- https://mvnrepository.com/artifact/com.aventstack/extentreports -->
+		<dependency>
+			<groupId>com.aventstack</groupId>
+			<artifactId>extentreports</artifactId>
+			<version>3.1.5</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/commons-io/commons-io -->
+		<dependency>
+			<groupId>commons-io</groupId>
+			<artifactId>commons-io</artifactId>
+			<version>2.6</version>
+		</dependency>
+
+
+		<!-- https://mvnrepository.com/artifact/info.cukes/cucumber-testng -->
+		<dependency>
+			<groupId>info.cukes</groupId>
+			<artifactId>cucumber-testng</artifactId>
+			<version>1.2.5</version>
+		</dependency>
+
 
 	</dependencies>
+
+
 	<build>
 		<plugins>
+
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-surefire-plugin</artifactId>
@@ -55,23 +97,16 @@
 					<testFailureIgnore> false </testFailureIgnore>
 					<suiteXmlFiles>
 						<suiteXmlFile>src/test/resources/runner/testng.xml</suiteXmlFile>
+
 					</suiteXmlFiles>
 				</configuration>
-			</plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-enforce-plugin</artifactId>
-				<version>1.4</version>
+
+
 			</plugin>
 
+
 		</plugins>
-		<testResources>
-			<testResource>
-				<directory>src/test/resources/properties</directory>
-				<includes>
-					<include>log4j.properties</include>
-				</includes>
-			</testResource>
-		</testResources>
 	</build>
+
+
 </project>
